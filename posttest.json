@@ -1,0 +1,45 @@
+{
+    "version": 2.0,
+    "questions": [
+      {
+        "question": "1.Suppose you are designing a system to track the inventory of a retail store. The system should allow store employees to manage the inventory, including adding and removing items, and tracking sales. You need to create an association relationship between the Item class and the Sale class to represent the fact that each sale involves one or more items. Based on this scenario, which of the following association relationships should be used?",
+        "answers": {
+          "a": "One-to-one association",
+          "b": "One-to-many association",
+          "c": "Many-to-many association",
+          "d": "Aggregation association"
+        },
+        "explanations": {
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "2.The signatures of some constructors and methods that could be defined for a Restaurant class, a class intended to store information about a restaurant is shown in each question below. Show the statement used to call the methods. If the method or constructor returns a value then put the call on the right hand side of an assignment statement so that the returned result is saved in a variable. For the purposes of this question, you can assume that the following variables have been declared and initialized, if necessary: Restaurant restaurant; String restName; String restAddress; String menu; Person restOwner; String ownerName; String[] dessertList; Do not provide an implementation for these methods. Note: write only one method invocation statement per question below.",
+        "answers": {
+          "a": "a.public Restaurant (String name) ",
+          "b": "b.public void printMenu()",
+          "c": "c.public static void setOwner (Person owner)",
+          "d": "d.public void setOwner (Person owner)",
+          "e": "e.public static void printMenu(Restaurant res)"
+        },
+        "explanations": {
+        },
+        "correctAnswer": "restaurant = new Restaurant (restName); restaurant.printMenu(); restaurant.setOwner(restOwner); restaurant.setOwner(restOwner); Restaurant.printMenu(restaurant);",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "3.Which of the following best describes the type of association between the given classes, based on their relationships in a car rental reservation system? Classes: Customer, Vehicle, Reservation, Office Executive",
+        "answers": {
+          "a": "a.One-many association between Customer and Reservation, and one-one association between Vehicle and Reservation, and one-many association between Office Executive and Reservation.",
+          "b": "b.One-many association between Customer and Vehicle, and one-one association between Reservation and Vehicle, and one-many association between Office Executive and Reservation.",
+          "c": "c.One-many association between Customer and Reservation, and one-one association between Reservation and Vehicle, and one-many association between Office Executive and Vehicle.",
+          "d": "d.One-many association between Customer and Vehicle, and one-one association between Reservation and Vehicle, and one-many association between Office Executive and Vehicle."
+        },
+        "explanations": {
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
+      }
+    ]
+  }

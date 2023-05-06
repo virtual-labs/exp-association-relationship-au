@@ -1,0 +1,44 @@
+{
+    "version": 2.0,
+    "questions": [
+      {
+        "question": "1.If there exits the class Student, then what does the following programming statement imply? Student s[] = new Student[5];",
+        "answers": {
+          "a": "a.5 students objects instantiated with garbage value.",
+          "b": "b.5 student objects instantiated with default values.",
+          "c": "c.5 Student object references with null value.",
+          "d": "d.student object array not created."
+        },
+        "explanations": {
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "2.Identify the valid statements about the 'this' operator:",
+        "answers": {
+          "a": "a.this is passed as parameter from non-static method to static method.",
+          "b": "b.this is passed as parameter from static method to non-static method.",
+          "c": "c.this helps in constructor call.",
+          "d": "d.this helps in accessing local variables."
+        },
+        "explanations": {
+        },
+        "correctAnswer": "a, c",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "3.In object-oriented programming, an association relationship is a relationship between two classes that describes a connection or interaction between the objects represented by those classes. Which of the following statements is true about association relationships?",
+        "answers": {
+          "a": "a.An association relationship is always a one-to-one relationship.",
+          "b": "b.An association relationship is always a many-to-many relationship.",
+          "c": "c.An association relationship can be a one-to-one, one-to-many, or many-to-many relationship.",
+          "d": "d.An association relationship can only be a one-to-many relationship."
+        },
+        "explanations": {
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
+      }
+    ]
+  }
