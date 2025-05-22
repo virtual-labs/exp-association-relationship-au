@@ -2,13 +2,13 @@
 
 Consider a use case of the car rental application as follows:
 
--  **Use Case Name:** Release a Vehicle (to a customer)
+-   **Use Case Name:** Release a Vehicle (to a customer)
 
-- **Description:** A customer arrives to acquire the vehicle and depart for desired destination. The vehicle reservation contract is signed and the vehicle is released to the customer.
+-   **Description:** A customer arrives to acquire the vehicle and depart for desired destination. The vehicle reservation contract is signed and the vehicle is released to the customer.
 
-- **Actors:** Front-Desk Office Executive, Customer
+-   **Actors:** Front-Desk Office Executive, Customer
 
-  Basic Flow ("Sunny Day Scenario"):
+    Basic Flow ("Sunny Day Scenario"):
 
     1. A customer comes to the office to acquire a vehicle.
 
@@ -18,15 +18,15 @@ Consider a use case of the car rental application as follows:
 
     4. The Office Executive then marks the contract active by entering the vehicle release date (today's date) onto the vehicle reservation contract. The use case terminates at this point.
 
--  **Exceptions ("Rainy Day Scenario"):**
+-   **Exceptions ("Rainy Day Scenario"):**
 
     1. Required vehicle type is not available due to late arrivals:
 
     2. Raised when the reserved vehicle is not available due to late returns. The customer is informed of the situation and told about the other vehicle types that are available. The customer is offered an incentive to accept another vehicle type. If the customer is not satisfied, the reservation is cancelled without penalty charges. The customer either accepts another vehicle type or cancels the reservation.
 
-- **Postconditions:** The customer departs with the vehicle and the reservation contract is marked active, or the reservation is cancelled.
+-   **Postconditions:** The customer departs with the vehicle and the reservation contract is marked active, or the reservation is cancelled.
 
--  **Stakeholder:** Reservation department
+-   **Stakeholder:** Reservation department
 
 Experiment 1 recap: Use case was completed. Noun phrases and conceptual classes were identified, and the domain object model was constructed.
 
@@ -36,38 +36,51 @@ Experiment 3 recap: The datatype of attributes and the signature of the methods 
 
 Experiment 4 recap: The class Customer was implemented in Java following the constraints given on the attributes and its accessor and mutator functions.
 
-Now, the steps to implement the aggregation and composition relationship of the class Customer and class Vehicle with class Reservation is as follows:
+---
 
-Step 1: Implement the class Vehicle based on the following rules.
+## Implementation Steps (as per simulation code)
 
-    1.  The regNum is set with a value at the time of object creation, and it is a mandatory field.
+### Step 1: Implement the Vehicle Class
 
-    2.  The keystatus is set to “available” on vehicle creation.
+-   The Vehicle class has a mandatory registration number set at creation and a key status field initialized to "available".
+-   It includes a constructor to set the registration number and methods to update the key status to "not available" and retrieve the registration number.
 
-    3.  Also complete the constructor, access and mutator methods in the class diagram.
+### Step 2: Implement the Customer Class
 
-    4.  The updateKeyStatus method always sets the keyStatus to “not available”.
+-   The Customer class includes fields for customer ID (auto-incremented), email, name, phone, and city.
+-   It provides constructors to create customers with email, phone, or both, along with methods to access and modify these fields.
 
-Step 2: The reservationID is set by the default constructor as the reservation count and it is mandatory field. It cannot be set by the user.
+### Step 3: Implement the Reservation Class
 
-    1. The current reservation mandatorily sets the customerObj with an existing customer object who books a vehicle.
+-   The Reservation class manages a reservation ID (auto-incremented), customer and vehicle objects, contract status, booking date, and release date.
+-   It offers constructors to create reservations using customer details and vehicle objects, along with methods to manage contract status, booking dates, and release dates.
 
-    2. The current reservation mandatorily sets the vehicleObj with an existing vehicle object.
+### Step 4: Aggregation Relationship Demo
 
-    3. The bookingDate indicates the date of booking of the vehicle by a customer otherwise it is set to null.
+-   Write a demo class to create a customer array with 3 objects.
+-   Customer objects are created with the availability of only email, then only phone and last customer with both email and phone number.
+-   Assign the city of the first two customers as Coimbatore and that of the remaining customers as Chennai.
+-   Create a Vehicle object with a registration number.
+-   A customer in Coimbatore does a reservation of the vehicle for current date. Also release the vehicle.
 
-    4.. The releaseDate indicates the date of handing over of the vehicle to customer otherwise it is set to null.
+### Step 5: Composition Relationship Demo
 
-    5. The contractStatus indicates the booking or hand over process of the reservation. Reservation incomplete makes this field null.
+-   Create a Vehicle object with a registration number (e.g., 5678)
+-   Create a Reservation object that:
+    1. Creates a Customer object with email/phone
+    2. Takes ownership of the Vehicle object
+    3. Sets the customer's city (e.g., "Coimbatore")
+    4. Sets the booking date to current date
+    5. Updates the vehicle's key status
 
-    6. Also complete the constructor, access and mutator methods in the class diagram.
+The composition relationship is enforced by:
 
-    7. The releaseContract method checks if the bookingDate matches releaseDate and the keystatus is “available” then update keyStatus or prints an error.
+-   The Reservation class creating and managing its Customer object
+-   The Reservation class taking ownership of the Vehicle object
+-   The lifecycle of Customer and Vehicle objects being tied to the Reservation object
 
-Step 3: Aggregation relationship: Write a demo class to create a customer array with 3 objects. Customer objects are created with the availability of only email, then only phone and last customer with both email and phone number. Assign the city of the first two customers is Coimbatore and remaining customers is Chennai. Create a vehicle object with a registration number. A customer in Coimbatore does a reservation of the vehicle for current date. Also release the vehicle.
+### Output
 
-Step 4: Composition relationship: Implement a modified Reservation class with customer construction possible directly by it. Also Write a demo class that creates a vehicle object with a registration number. Create a reservation object that does a reservation of the vehicle for current date by providing **customerName**, **email** and/or **phone number**. Later set the city as Coimbatore. Also release the vehicle.
-
-Output: Execution of the **TestDriver** code is shown as stack-heap view for both aggregation and composition code.
+Execution of the TestDriver code is shown as a stack-heap view for both aggregation and composition code, matching the simulation output.
 
 > **Note:** Work on the experiments sequentially.
