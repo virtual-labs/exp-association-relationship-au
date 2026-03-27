@@ -38,24 +38,24 @@ Experiment 4 recap: The class Customer was implemented in Java following the con
 
 ---
 
-## Implementation Steps (as per simulation code)
+### Implementation Steps 
 
-### Step 1: Implement the Vehicle Class
+#### Step 1: Implement the Vehicle Class
 
 -   The Vehicle class has a mandatory registration number set at creation and a key status field initialized to "available".
 -   It includes a constructor to set the registration number and methods to update the key status to "not available" and retrieve the registration number.
 
-### Step 2: Implement the Customer Class
+#### Step 2: Implement the Customer Class
 
 -   The Customer class includes fields for customer ID (auto-incremented), email, name, phone, and city.
 -   It provides constructors to create customers with email, phone, or both, along with methods to access and modify these fields.
 
-### Step 3: Implement the Reservation Class
+#### Step 3: Implement the Reservation Class
 
 -   The Reservation class manages a reservation ID (auto-incremented), customer and vehicle objects, contract status, booking date, and release date.
 -   It offers constructors to create reservations using customer details and vehicle objects, along with methods to manage contract status, booking dates, and release dates.
 
-### Step 4: Aggregation Relationship Demo
+#### Step 4: Aggregation Relationship Demo
 
 -   Write a demo class to create a customer array with 3 objects.
 -   Customer objects are created with the availability of only email, then only phone and last customer with both email and phone number.
@@ -63,7 +63,7 @@ Experiment 4 recap: The class Customer was implemented in Java following the con
 -   Create a Vehicle object with a registration number.
 -   A customer in Coimbatore does a reservation of the vehicle for current date. Also release the vehicle.
 
-### Step 5: Composition Relationship Demo
+#### Step 5: Composition Relationship Demo
 
 -   Create a Vehicle object with a registration number (e.g., 5678)
 -   Create a Reservation object that:
@@ -79,7 +79,7 @@ The composition relationship is enforced by:
 -   The Reservation class taking ownership of the Vehicle object
 -   The lifecycle of Customer and Vehicle objects being tied to the Reservation object
 
-### Output
+#### Output
 
 Execution of the TestDriver code is shown as a stack-heap view for both aggregation and composition code, matching the simulation output.
 
